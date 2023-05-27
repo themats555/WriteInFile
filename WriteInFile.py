@@ -12,8 +12,8 @@ class WriteInFile:
     ----------
         text : str
             the text to search
-        new_text : str
-            the text to insert
+        new_text : list
+            the list with the text to insert
         sound : str
             the sound that the animal makes
         row_number : int
@@ -31,12 +31,22 @@ class WriteInFile:
         
     def write_in_file(self):
         fla = 0
+        new_text_index = 0
+        if len(self.new_text) == 0:
+            print('new_text is empty, nothing to do. Bye')
+            return
+            
         with open(self.input_file, 'r') as f:
             with open(self.output_file,'w') as o:
                 for i, line in enumerate(f):
                     if fla == self.row_number :
-                        o.write(self.new_text+'\n')
-                        fla = 0
+                        if len(self.text) >= new_text_index:
+                            o.write(self.new_text[new_text_index]+'\n')
+                            new_text_index += 1
+                            fla = 0
+                        else:
+                            print(len(self.text) >= new_text_index)
+                            return
                     elif fla > 0:
                         fla += 1
 
