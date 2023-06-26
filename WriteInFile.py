@@ -17,7 +17,7 @@ class WriteInFile:
         row_number : int
             the row number after the row of the text (default 1)
     Example:
-        w = WriteInFile('infile', 'OPS ', 'class_1_ops_',row_number = 3, output_file='outfile')
+        w = WriteInFile(input_file = 'infile', text = 'OPS ', new_text = 'class_1_ops_', row_number = 3, output_file='outfile')
         w.write_in_file()
     '''
     def __init__(self,input_file, text, new_text, row_number=1, output_file='output_file'):
