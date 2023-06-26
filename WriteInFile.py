@@ -14,8 +14,6 @@ class WriteInFile:
             the text to search
         new_text : list
             the list with the text to insert
-        sound : str
-            the sound that the animal makes
         row_number : int
             the row number after the row of the text (default 1)
     Example:
